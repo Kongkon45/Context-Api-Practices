@@ -1,18 +1,20 @@
-import React, { createContext, useState } from 'react'
+import React, { useState } from 'react'
 import Home from './Components/Home'
 import About from './Components/About'
 import Contact from './Components/Contact'
+import { CounterContext } from './Components/Context'
 
-export const categoryContext = createContext();
+
 const App = () => {
   const [count, setCount] = useState(0)
   return (
-    <categoryContext.Provider value={count} className='text-center'>
-      <p>count : {count}</p>
-      <Home count={count} setCount={setCount}/>
+    <CounterContext.Provider value={{count, setCount}}>
+      <div>
+      <Home/>
       <About/>
       <Contact/>
-    </categoryContext.Provider>
+    </div>
+    </CounterContext.Provider>
   )
 }
 

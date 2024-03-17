@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
-import { categoryContext } from '../App'
+import { CounterContext } from './Context'
 
-const CategoryDetails = ({count}) => {
-    const category = useContext(categoryContext)
+const CategoryDetails = () => {
+    const {count, setCount} = useContext(CounterContext)
   return (
     <div>
-        <h5>This is category details : {count}</h5>
-        <p>Category data is : {category}</p>
+        CategoryDetails : {count}
+        <button onClick={()=>setCount(count+2)}>Increment</button>
     </div>
+    
   )
 }
 

@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
-import { categoryContext } from '../App'
+import React from 'react'
 
 const About = () => {
-  const category = useContext(categoryContext)
   return (
-    <div>About :{category}</div>
+    <div>About</div>
   )
 }
 
